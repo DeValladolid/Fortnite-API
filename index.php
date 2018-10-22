@@ -1,10 +1,24 @@
 <?php
-require_once 'fortnite-api/Autoloader.php';
 
-$api = new FortniteClient;
-$api->setKey('5ae9fa892ff9cf7b4bfb2cda585bc77a');
+$curl = curl_init();
 
-$data = $api->challenges->get('current', 'en');
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "https://fortnitecontent-website-prod07.ol.epicgames.com/content/api/pages/fortnite-game",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+));
 
-var_dump($data);
-?>
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
+}
