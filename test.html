@@ -8,16 +8,14 @@
          var settings = {
   "async": true,
   "crossDomain": true,
-  "url": "https://fortnitecontent-website-prod07.ol.epicgames.com/content/api/pages/fortnite-game",
+  "url": "https://fnbr.co/api/shop",
   "method": "GET",
-  "headers": {}
+  "headers": {
+    "x-api-key": "7a0ba247-ff23-4c94-b982-fe1c696d1051"
+  }
 }
 
-$.ajax(settings).done(function (response) {
-  console.log(response);
-});
-
-           var content = battleroyalenews.news.messages.0.title;
+           var content = featured;
            $("#windSpeed").append(content);
 
          });
