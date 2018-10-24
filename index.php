@@ -3,7 +3,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://fnbr.co/api/shop",
+  CURLOPT_URL => "https://api.fortnitetracker.com/v1/challenges",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
@@ -11,7 +11,7 @@ curl_setopt_array($curl, array(
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "GET",
   CURLOPT_HTTPHEADER => array(
-    "x-api-key: 7a0ba247-ff23-4c94-b982-fe1c696d1051"
+    "TRN-Api-Key: d8617fca-5a7f-4fbc-bf16-d9b65000f183"
   ),
 ));
 
