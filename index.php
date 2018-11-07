@@ -1,27 +1,10 @@
 <?php
+require_once 'fortnite-api/Autoloader.php';
 
-$curl = curl_init();
+$api = new FortniteClient;
+$api->setKey('5ae9fa892ff9cf7b4bfb2cda585bc77a');
 
-curl_setopt_array($curl, array(
-  CURLOPT_URL => "https://api.fortnitetracker.com/v1/challenges",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_HTTPHEADER => array(
-    "TRN-Api-Key: d8617fca-5a7f-4fbc-bf16-d9b65000f183"
-  ),
-));
+$data = $api->items->store();
 
-$response = curl_exec($curl);
-$err = curl_error($curl);
-
-curl_close($curl);
-
-if ($err) {
-  echo "cURL Error #:" . $err;
-} else {
-  echo $response;
-}
+var_dump($data);
+?>
