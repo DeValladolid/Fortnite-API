@@ -17,6 +17,7 @@ curl_setopt_array($curl, array(
   ),
 ));
 
+$data = $api->items->store();
 $response = curl_exec($curl);
 $err = curl_error($curl);
 
