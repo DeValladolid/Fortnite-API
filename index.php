@@ -31,6 +31,16 @@ var_dump(json_decode($response));
 var_dump(json_decode($json, true));
 
 ?>
+<?php
+require_once 'fortnite-api/Autoloader.php';
+
+$api = new FortniteClient;
+$api->setKey('your_key');
+
+$data = $api->items->store();
+
+var_dump($data);
+?>
 
 
 
