@@ -27,4 +27,11 @@ if ($err) {
 } else {
   echo $response;
 }
+
+var_dump(json_decode($response));
+var_dump(json_decode($json, true));
+
 ?>
+
+
+
